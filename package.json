@@ -1,0 +1,70 @@
+{
+  "name": "n8n-nodes-token-tracker",
+  "version": "1.0.0",
+  "description": "N8N node for AI token tracking and monitoring with sub-workflow execution capabilities",
+  "keywords": [
+    "n8n-community-node-package",
+    "ai",
+    "token-tracking",
+    "monitoring",
+    "middleware",
+    "langchain",
+    "llm"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/lauchacarro/n8n-nodes-token-tracker",
+  "author": {
+    "name": "Lautaro Carro",
+    "email": "lautaroecarro@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lauchacarro/n8n-nodes-token-tracker.git"
+  },
+  "engines": {
+    "node": ">=20.15"
+  },
+  "main": "index.js",
+  "scripts": {
+    "build": "npx rimraf dist && tsc && gulp build:icons",
+    "dev": "tsc --watch",
+    "format": "prettier nodes --write",
+    "lint": "eslint nodes package.json",
+    "lintfix": "eslint nodes package.json --fix",
+    "prepublishOnly": "npm run build && npm run lint -c .eslintrc.prepublish.js nodes package.json",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [],
+    "nodes": [
+      "dist/nodes/AITokenTracking/AiTokenTracking.node.js"
+    ]
+  },
+  "peerDependencies": {
+    "@langchain/core": "*",
+    "n8n-workflow": "*"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.0",
+    "@types/lodash": "^4.17.20",
+    "@types/node": "^20.0.0",
+    "@typescript-eslint/parser": "~8.32.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-n8n-nodes-base": "^1.16.3",
+    "gulp": "^5.0.0",
+    "jest": "^29.5.0",
+    "jest-mock-extended": "^3.0.0",
+    "prettier": "^3.5.3",
+    "ts-jest": "^29.1.0",
+    "typescript": "^5.8.2"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
