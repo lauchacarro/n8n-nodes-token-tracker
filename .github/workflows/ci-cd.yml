@@ -99,7 +99,7 @@ jobs:
         id: version-check
         run: |
           PACKAGE_VERSION=$(node -p "require('./package.json').version")
-          NPM_VERSION=$(npm view n8n-nodes-memory-state version 2>/dev/null || echo "0.0.0")
+          NPM_VERSION=$(npm view n8n-nodes-token-tracker version 2>/dev/null || echo "0.0.0")
           echo "Package version: $PACKAGE_VERSION"
           echo "NPM version: $NPM_VERSION"
           if [ "$PACKAGE_VERSION" != "$NPM_VERSION" ]; then
@@ -136,18 +136,18 @@ jobs:
           body: |
             ## Changes in v${{ steps.version-check.outputs.new-version }}
 
-            Memory State Node for n8n - Release v${{ steps.version-check.outputs.new-version }}
+
+            AI Token Tracker Node for n8n - Release v${{ steps.version-check.outputs.new-version }}
 
             ### Features
-            - Set: Store JSON objects with string keys
-            - Get: Retrieve values by key (returns null if not found)
-            - Get with Default: Auto-store default values when key doesn't exist
-            - Delete: Remove keys from memory
-            - Keys: List all keys with optional regex filtering and value retrieval
+            - Track and monitor AI token usage in n8n workflows
+            - Sub-workflow execution for advanced monitoring
+            - Middleware support for AI/LLM integrations
+            - Compatible with LangChain and n8n-workflow
 
             ### Installation
             ```bash
-            npm install n8n-nodes-memory-state
+            npm install n8n-nodes-token-tracker
             ```
 
             See the [README](https://github.com/${{ github.repository }}/blob/main/README.md) for full documentation.
