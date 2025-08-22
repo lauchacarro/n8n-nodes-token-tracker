@@ -26,13 +26,13 @@ npm run build
 npm link
 
 # In your N8N directory
-npm link @custom/n8n-nodes-ai-token-tracking
+npm link n8n-nodes-ai-token-tracking
 ```
 
 ### 5. Install in N8N
 For production use, you can install directly:
 ```bash
-npm install @custom/n8n-nodes-ai-token-tracking
+npm install n8n-nodes-ai-token-tracking
 ```
 
 ## 🚀 Quick Start Example
