@@ -2,7 +2,7 @@ import type { ISupplyDataFunctions, INode, IExecuteFunctions } from 'n8n-workflo
 import { NodeOperationError } from 'n8n-workflow';
 import { mock } from 'jest-mock-extended';
 
-import { AITokenTracking } from '../AiTokenTracking.node';
+import { AiTokenTracking } from '../AiTokenTracking.node';
 
 // Mock the dependencies
 jest.mock('@langchain/core/language_models/chat_models', () => ({
@@ -21,13 +21,13 @@ jest.mock('../helpers/TokenTracker', () => ({
 	})),
 }));
 
-describe('AITokenTracking Node', () => {
-	let node: AITokenTracking;
+describe('AiTokenTracking Node', () => {
+	let node: AiTokenTracking;
 	let mockSupplyDataFunctions: jest.Mocked<ISupplyDataFunctions>;
 	let mockExecuteFunctions: jest.Mocked<IExecuteFunctions>;
 
 	beforeEach(() => {
-		node = new AITokenTracking();
+		node = new AiTokenTracking();
 		mockSupplyDataFunctions = mock<ISupplyDataFunctions>();
 		mockExecuteFunctions = mock<IExecuteFunctions>();
 

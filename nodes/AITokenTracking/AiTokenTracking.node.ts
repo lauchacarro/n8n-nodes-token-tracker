@@ -36,7 +36,7 @@ function extractWorkflowId(param: string | INodeParameterResourceLocator): strin
 	return param as string;
 }
 
-export class AITokenTracking implements INodeType {
+export class AiTokenTracking implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'AI Token Tracking',
 		name: 'aiTokenTracking',
@@ -178,7 +178,7 @@ export class AITokenTracking implements INodeType {
 
 			// If sub-workflow is configured, send data immediately
 			if (subWorkflowId) {
-				await AITokenTracking.sendTokenDataToSubworkflow(nodeInstance, usage, subWorkflowId, storeKey);
+				await AiTokenTracking.sendTokenDataToSubworkflow(nodeInstance, usage, subWorkflowId, storeKey);
 			}
 		};
 
